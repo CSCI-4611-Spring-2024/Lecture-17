@@ -1,3 +1,9 @@
+/* Lecture 17: Animation and Kinematics
+ * CSCI 4611, Spring 2024, University of Minnesota
+ * Instructor: Evan Suma Rosenberg <suma@umn.edu>
+ * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+ */ 
+
 import * as gfx from 'gophergfx'
 
 export class RobotArm extends gfx.Skeleton
@@ -23,12 +29,18 @@ export class RobotArm extends gfx.Skeleton
         middleArm.name = "middleArm";
         middleArm.direction.set(0, 1, 0);
         middleArm.length = 0.25;
+
+        middleArm.position.copy(upperArm.direction);
+        middleArm.position.multiplyScalar(upperArm.length);
         upperArm.add(middleArm);
 
         const lowerArm = new gfx.Bone();
         lowerArm.name = "lowerArm";
         lowerArm.direction.set(0, 1, 0);
         lowerArm.length = 0.25;
+
+        lowerArm.position.copy(middleArm.direction);
+        lowerArm.position.multiplyScalar(middleArm.length);
         middleArm.add(lowerArm);
     }
 
@@ -65,11 +77,7 @@ export class RobotArm extends gfx.Skeleton
             armMesh.material.setColor(new gfx.Color(0, 0, 1));
             bone.add(armMesh);
 
-            bone.rotation.setRotationZ(Math.PI/4);
-
-            const parentBone = bone.parent as gfx.Bone;
-            bone.position.copy(parentBone.direction);
-            bone.position.multiplyScalar(parentBone.length);
+            
         }
         else if(bone.name == 'lowerArm')
         {
@@ -77,12 +85,6 @@ export class RobotArm extends gfx.Skeleton
             armMesh.position.set(0, bone.length/2, 0);
             armMesh.material.setColor(new gfx.Color(1, 0, 0));
             bone.add(armMesh);
-
-            bone.rotation.setRotationZ(-Math.PI/2);
-
-            const parentBone = bone.parent as gfx.Bone;
-            bone.position.copy(parentBone.direction);
-            bone.position.multiplyScalar(parentBone.length);
         }
 
         bone.children.forEach((child: gfx.Node3) => {

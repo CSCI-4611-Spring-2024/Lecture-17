@@ -1,8 +1,9 @@
-/* Lecture 16: Programming with Hierarchical Transforms
+/* Lecture 17: Animation and Kinematics
  * CSCI 4611, Spring 2024, University of Minnesota
  * Instructor: Evan Suma Rosenberg <suma@umn.edu>
  * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
  */ 
+
 
 import { App } from './App'
 

@@ -1,10 +1,11 @@
-/* Lecture 16: Programming with Hierarchical Transforms
+/* Lecture 17: Animation and Kinematics
  * CSCI 4611, Spring 2024, University of Minnesota
  * Instructor: Evan Suma Rosenberg <suma@umn.edu>
  * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
  */ 
 
 import * as gfx from 'gophergfx'
+import { GUI } from 'dat.gui'
 import { RobotArm } from './RobotArm'
 
 export class App extends gfx.GfxApp
