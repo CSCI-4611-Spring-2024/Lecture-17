@@ -1,4 +1,4 @@
-/* Lecture 17: Animation and Kinematics
+/* Lecture 17: Hierarchy, Animation, and Kinematics
  * CSCI 4611, Spring 2024, University of Minnesota
  * Instructor: Evan Suma Rosenberg <suma@umn.edu>
  * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
